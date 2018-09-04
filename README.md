@@ -25,6 +25,22 @@ $ mongo
 
 ref: http://yannickloriot.com/2016/04/install-mongodb-and-node-js-on-a-raspberry-pi/
 
+It would install MongoDB shell version: 2.4.14
+To add admin, need use old API:
+
+~~~Mongo API
+use <dbname>
+
+db.addUser( { user: "<username>",pwd: "<password>",roles: [ "userAdminAnyDatabase" | "userAdmin"] } )
+
+db.auth("youruser", "yourpassword") //return 1 means login success
+
+show collections
+~~~
+
+ref: https://github.com/andresvidal/rpi3-mongodb3
+ref: https://docs.mongodb.com/v2.4/tutorial/add-user-administrator/
+
 ### 3. Mosca
 
 
